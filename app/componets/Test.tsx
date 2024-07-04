@@ -413,13 +413,23 @@ export default function Home() {
         if (v == p) {
           if (k == 14) {
             setResult("Thridosha");
-          } else if (k != 14) {
+          } else if (k < 36) {
+            setResult("Kapha Vatha");
+          } else if (k >= 36) {
             setResult("Kapha");
           }
         } else if (v > p) {
-          setResult("Kapha Vatha");
+          if (k < 36) {
+            setResult("Kapha Vatha");
+          } else if (k >= 36) {
+            setResult("Kapha");
+          }
         } else if (p > v) {
-          setResult("Kapha Pitha");
+          if (k < 36) {
+            setResult("Kapha Pitha");
+          } else if (k >= 36) {
+            setResult("Kapha");
+          }
         }
       } else if (v >= 14 && k >= 14) {
         if (v == k) {
@@ -433,17 +443,27 @@ export default function Home() {
         if (v == k) {
           if (p == 14) {
             setResult("Thridosha");
-          } else if (p != 14) {
+          } else if (p < 36) {
+            setResult("Pitha Vatha");
+          } else if (p >= 36) {
             setResult("Pitha");
           }
         } else if (v > k) {
-          setResult("Pitha Vatha");
+          if (p < 36) {
+            setResult("Pitha Vatha");
+          } else if (p >= 36) {
+            setResult("Pitha");
+          }
         } else if (k > v) {
-          setResult("Pitha Kapha");
+          if (p < 36) {
+            setResult("Pitha Kapha");
+          } else if (p >= 36) {
+            setResult("Pitha");
+          }
         }
       } else if (k >= 14 && p >= 14) {
         if (k == p) {
-          setResult("Kapha Pitha");
+          setResult("Pitha Kapha");
         } else if (k > p) {
           setResult("Kapha Pitha");
         } else if (p > k) {
@@ -453,13 +473,23 @@ export default function Home() {
         if (k == p) {
           if (v == 14) {
             setResult("Thridosha");
-          } else if (v != 14) {
+          } else if (v < 36) {
+            setResult("Vatha Pitha");
+          } else if (v >= 36) {
             setResult("Vatha");
           }
         } else if (k > p) {
-          setResult("Vatha Kapha");
+          if (v < 36) {
+            setResult("Vatha Kapha");
+          } else if (v >= 36) {
+            setResult("Vatha");
+          }
         } else if (p > k) {
-          setResult("Vatha Pitha");
+          if (v < 36) {
+            setResult("Vatha Pitha");
+          } else if (v >= 36) {
+            setResult("Vatha");
+          }
         }
       }
     } else {
@@ -481,7 +511,7 @@ export default function Home() {
     <div className="container p-5 bg-gray-900 text-white min-h-screen rounded-lg shadow-lg">
       <div>
         <h1 className="font-bold text-2xl text-center">
-          Ayurweda Body Constitution
+          Ayurveda Body Constitution
         </h1>
       </div>
       <form onSubmit={handleSubmit} className="space-y-4">
